@@ -32,7 +32,8 @@ layout = go.Layout(
     title = 'Aanduiding crisis vanaf 2008 d.m.v. verschil in % in verkochte huizen',
     yaxis = go.layout.YAxis(
         title='Verandering in %'
-    )
+    ),
+    plot_bgcolor='rgb(219, 241, 233)'
     
 )
 
