@@ -7,7 +7,7 @@ df = pd.read_csv('Bestaande_koopwoningen_regio_2015_100_11062019_105814.csv', se
 test=df[df["Regions"]=="Nederland"]
 data=[]
 for provincie in df['Regions'].unique():
-    randstad=["Noord-Holland (PV)","Zuid-Holland (PV)","Utrecht (PV)"]
+    randstad=["Noord-Holland (PV)","Utrecht (PV)"]
     if '(PV)'in provincie:
         test=df[df["Regions"]==provincie]
         if provincie in randstad:
@@ -16,15 +16,16 @@ for provincie in df['Regions'].unique():
             y = test["gemiddelde huizenprijs"],
                 name=provincie,
                 line = dict(
-                    width = 7)
+                    width = 5,
+                    dash = 'dashdot'),
+
             ))
         else:
             data.append(go.Scatter(
             x = test["Periods"],
             y = test["gemiddelde huizenprijs"],
                 name=provincie))
-                
-# import geopandas as gpd
-# geodf = gpd.read_file("")
+            line = dict(
+                    dash = 'dash')
 
 iplot(data)
