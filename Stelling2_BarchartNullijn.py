@@ -1,12 +1,9 @@
-# Barchart met 0-lijn, aanduiding crisis
-
-
 test=df[df["Regions"]=="Nederland"]
+
 
 full = go.Bar(
     x = test["Periods"],
     y = test["verschil in % in aantal verkochte huizen vergeleken met vorig jaar"],
-    name=provincie,
     base = 0,
     width = [0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.9,0.9,0.9,0.9,0.9,0.9,0.6,0.6,0.6,0.6,0.6],
     marker=dict(
@@ -29,7 +26,7 @@ data = [full]
 
 layout = go.Layout(
     showlegend = False,
-    title = 'Aanduiding crisis vanaf 2008 d.m.v. verschil in % in verkochte huizen',
+    title = 'Aanduiding crisis vanaf 2008 d.m.v. verschil in % in verkochte huizen vergeleken met vorig jaar',
     yaxis = go.layout.YAxis(
         title='Verandering in %'
     ),
